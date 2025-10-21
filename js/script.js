@@ -1212,15 +1212,7 @@ function previousSong() {
 
 function toggleShuffle() {
     isShuffled = !isShuffled;
-    // Toggles the 'active' class on the shuffle button
     document.getElementById('shuffleBtn').classList.toggle('active', isShuffled);
-}
-
-
-function toggleRepeat() {
-    isRepeated = !isRepeated;
-    audioPlayer.loop = isRepeated;
-    updateRepeatButton();
 }
 
 function seekSong(event) {
@@ -1649,6 +1641,3 @@ function playSearchResultMixed(index, songsJson) {
     }
 }
 
-import { neon } from '@netlify/neon';
-const sql = neon(); // automatically uses env NETLIFY_DATABASE_URL
-const [post] = await sql`SELECT * FROM posts WHERE id = ${postId}`;
